@@ -19,14 +19,17 @@
     ::selection { background: #f6e4e2; }
     @keyframes rs-toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
     @keyframes rs-spin { to { transform: rotate(360deg); } }
+    @media (max-width: 700px) {
+      #rs-layout { padding: 12px !important; align-items: center !important; }
+    }
   </style>
 </helmet>
 
-<div style="min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; gap: 56px; padding: 48px 32px; font-family: var(--font-sans); flex-wrap: wrap;">
+<div id="rs-layout" style="min-height: 100vh; min-height: 100dvh; display: flex; align-items: flex-start; justify-content: center; gap: 56px; padding: 48px 32px; font-family: var(--font-sans); flex-wrap: wrap;">
 
   <!-- ═══════════ PHONE ═══════════ -->
   <div style="flex: none;">
-  <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" hint-size="430px,880px">
+  <x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ isDark }}" height="min(874px, calc(100dvh - 24px))" width="auto" hint-size="430px,880px">
     <div style="height: 100%; display: flex; flex-direction: column; background: var(--rs-paper); position: relative; font-family: var(--font-sans); color: var(--rs-ink); padding-top: 54px; box-sizing: border-box; --rs-paper: {{ cPaper }}; --rs-ink: {{ cInk }}; --rs-surface: {{ cSurface }}; --rs-surface-2: {{ cSurface }}; --rs-line: {{ cLine }}; --rs-graphite: {{ cBody }}; --rs-gray-500: {{ cMuted }}; --rs-gray-400: {{ cFaint }}; --rs-wash-amber: {{ cWashAmber }}; --rs-wash-blue: {{ cWashBlue }}; --rs-wash-salmon: {{ cWashSalmon }}; --rs-wash-green: {{ cWashGreen }};">
 
       <!-- ══════ DOMŮ ══════ -->
@@ -2156,11 +2159,11 @@ class Component extends DCLogic {
 
     const notes = [
       // Prezentované položky pro vývojáře — zbytek je záměrně skrytý (viz zakomentované položky níže), zůstává v kódu pro pozdější použití.
-      { badge: "Nové", bb: "var(--rs-red)", title: "Výzva k hodnocení aplikace", sub: "Po 2. pozitivním signálu (uložení, fronta, stažení) · kladné → store, výhrady → formulář do CMS s metadaty", screen: "home", rate: true },
       { badge: "Nové", bb: "var(--rs-red)", title: "Vyhledávání v aplikaci", sub: "Nejžádanější funkce (12 % předplatitelů) vč. archivu od 1990", screen: "search" },
       { badge: "Nové", bb: "var(--rs-red)", title: "Odlišení přečteného a řazení", sub: "Roh s fajfkou v pravém dolním rohu.", screen: "home" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Audio: rozcestník + přehrávač jako vrstva", sub: "Série, audiočlánky, stažené; player se minimalizuje, fronta uvnitř", screen: "audio" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Nastavení a tmavý režim", sub: "Účet, vzhled v šedých tónech, velikost písma", screen: "settings" },
+      { badge: "Nové", bb: "var(--rs-red)", title: "Audiopřehrávač", sub: "Série, audiočlánky, stažené; player se minimalizuje, fronta uvnitř", screen: "audio", openPlayer: true },
+      { badge: "Nové", bb: "var(--rs-red)", title: "Výzva k hodnocení aplikace", sub: "Po 2. pozitivním signálu (uložení, fronta, stažení) · kladné → store, výhrady → formulář do CMS s metadaty", screen: "home", rate: true },
+      // { badge: "Nové", bb: "var(--rs-red)", title: "Nastavení a tmavý režim", sub: "Účet, vzhled v šedých tónech, velikost písma", screen: "settings" },
       // { badge: "Nové", bb: "var(--rs-red)", title: "Souhrn „Ve zkratce“", sub: "Kratší verze článků · churn-lift 1,8×", screen: "article" },
       // { badge: "Nové", bb: "var(--rs-red)", title: "Archiv a speciály", sub: "Starší vydání od 1990 podle ročníků", screen: "issue" },
       // { badge: "Nové", bb: "var(--rs-red)", title: "Paywall v článku", sub: "Ukázka, předplatné, přihlášení (Tweaks)", screen: "article" },
@@ -2170,7 +2173,7 @@ class Component extends DCLogic {
       // { badge: "Fix", bb: "var(--rs-ink)", title: "Deeplinky a kopírování", sub: "Odkaz z článku se otevře v aplikaci, text lze označit", screen: "article" },
       // { badge: "Fix", bb: "var(--rs-ink)", title: "Vydání: PDF a offline bez pádů", sub: "Stažení s průběhem, příznak tištěného vydání", screen: "issue" },
       // { badge: "Fix", bb: "var(--rs-ink)", title: "Bez self-promo bannerů", sub: "Předplatitelé nevidí reklamu — čistý feed", screen: "home" },
-    ].map((n) => ({ ...n, badgeBg: n.bb, bg: n.rate ? (s.rateOpen ? "var(--rs-wash-amber)" : "var(--rs-surface)") : s.screen === n.screen ? "var(--rs-wash-amber)" : "var(--rs-surface)", go: n.rate ? () => { pushNav("home"); openRate(); } : go(n.screen) }));
+    ].map((n) => ({ ...n, badgeBg: n.bb, bg: (n.rate || n.openPlayer) ? ((n.rate ? s.rateOpen : s.playerOpen) ? "var(--rs-wash-amber)" : "var(--rs-surface)") : s.screen === n.screen ? "var(--rs-wash-amber)" : "var(--rs-surface)", go: n.rate ? () => { pushNav("home"); openRate(); } : n.openPlayer ? () => { pushNav("home"); playTrack(); } : go(n.screen) }));
 
     // hodnocení
     const rateTagDefs = ["Pády a chyby", "Audio a přehrávání", "Chybí mi funkce", "Čtení a vzhled", "Předplatné", "Jiné"];
