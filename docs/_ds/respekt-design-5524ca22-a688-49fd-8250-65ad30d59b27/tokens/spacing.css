@@ -1,0 +1,53 @@
+/* ============================================================
+   Respekt — Spacing, radius, shadow, layout tokens
+   8px base grid. Soft, generous corner radii. Restrained shadows
+   (cards mostly sit on flat tinted/gray fills, not floating).
+   ============================================================ */
+:root {
+  /* ---------- Spacing (8px grid) ---------- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 96px;
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 2px;     /* buttons, inputs (subtle) */
+  --radius-sm: 4px;     /* small chips, image bottom */
+  --radius-md: 6px;     /* cards, widgets, images (signature) */
+  --radius-lg: 12px;    /* large panels, modals */
+  --radius-xl: 20px;    /* sheets */
+  --radius-pill: 999px; /* round buttons, avatars, play controls */
+
+  /* ---------- Borders ---------- */
+  --border-width: 1px;
+  --border-width-strong: 2px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.16);
+  --shadow-player: 0 -2px 24px rgba(0,0,0,0.12); /* docked audio player */
+
+  /* ---------- Layout ---------- */
+  --container-desktop: 1180px;  /* content column inside 1440 frame */
+  --gutter-desktop: 130px;      /* page side padding at 1440 */
+  --gutter-mobile: 16px;
+  --navbar-h: 88px;
+  --navbar-secondary-h: 64px;
+  --grid-gap: 12px;             /* card grid gap */
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur: 200ms; /* @kind other */
+  --dur-slow: 320ms; /* @kind other */
+}

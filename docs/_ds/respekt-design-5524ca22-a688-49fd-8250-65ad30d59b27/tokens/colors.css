@@ -1,0 +1,78 @@
+/* ============================================================
+   Respekt — Color tokens
+   A clean editorial palette: near-black ink on white, a single
+   signature red, warm pastel section washes, and a set of
+   category accent colors (audio = purple, comment, podcast…).
+   ============================================================ */
+:root {
+  /* ---------- Brand ---------- */
+  --rs-red: #ce0b24;            /* signature Respekt red — logo, links, alerts */
+  --rs-red-dark: #a8081c;       /* hover / pressed red */
+  --rs-gold: #bea140;           /* "Můj účet" / account & premium accent */
+  --rs-gold-soft: #f2a43a;      /* warm amber, base for pastel wash */
+
+  /* ---------- Ink & neutrals ---------- */
+  --rs-ink: #181d27;            /* primary text, headlines */
+  --rs-ink-2: #181818;          /* near-black, app surfaces */
+  --rs-graphite: #494e56;       /* secondary text, perex on cards */
+  --rs-gray-600: #4f4f4f;       /* body-secondary */
+  --rs-gray-500: #868d98;       /* meta, captions, muted labels */
+  --rs-gray-400: #a2a2a2;       /* disabled, faint icon */
+  --rs-gray-300: #cecece;       /* dividers on dark photo */
+  --rs-line: #e0e4e9;           /* hairline borders, rules */
+  --rs-surface: #eceff2;        /* card / widget fill */
+  --rs-surface-2: #f4f4f4;      /* alt panel fill */
+  --rs-paper: #ffffff;          /* page background */
+  --rs-black: #000000;
+  --rs-white: #ffffff;
+
+  /* big-article / featured dark card background */
+  --rs-card-dark: #5a5460;      /* muted plum-gray photo overlay base */
+
+  /* ---------- Category / accent colors ---------- */
+  --rs-audio: #9747ff;          /* audio & voice (purple) */
+  --rs-podcast: #178d4d;        /* podcast green */
+  --rs-comment: #c34f46;        /* commentary / opinion (terracotta) */
+  --rs-blue: #1756ac;           /* links in running text, info */
+  --rs-blue-bright: #1d8ac8;    /* interactive / charts */
+  --rs-green: #1aab76;          /* success, unlocked */
+
+  /* ---------- Pastel section washes (used as solid fills) ----------
+     On the site these appear as ~20% tints behind section blocks.   */
+  --rs-wash-salmon: #f6e4e2;    /* C34F46 @ ~20% on white */
+  --rs-wash-amber:  #fcf0dd;    /* F2A43A @ ~20% on white */
+  --rs-wash-blue:   #e3edf7;
+  --rs-wash-green:  #e2f3ec;
+
+  /* ---------- Pastel data palette (maps, charts, infographics) ---------- */
+  --rs-chart-blue: #3d70b2;
+  --rs-chart-blue-light: #b6d1e1;
+  --rs-chart-teal: #2d7f73;
+  --rs-chart-green: #cfecd9;
+  --rs-chart-pink: #e8b2cd;
+  --rs-chart-lilac: #ebe0e9;
+  --rs-chart-navy: #283e5a;
+  --rs-chart-cobalt: #6297da;
+
+  /* ============================================================
+     Semantic aliases — prefer these in components
+     ============================================================ */
+  --text-strong: var(--rs-ink);
+  --text-body: var(--rs-graphite);
+  --text-muted: var(--rs-gray-500);
+  --text-on-dark: var(--rs-white);
+  --text-link: var(--rs-red);
+
+  --surface-page: var(--rs-paper);
+  --surface-card: var(--rs-surface);
+  --surface-card-dark: var(--rs-card-dark);
+  --surface-panel: var(--rs-surface-2);
+
+  --border-hairline: var(--rs-line);
+  --border-strong: var(--rs-ink);
+
+  --accent: var(--rs-red);
+  --accent-account: var(--rs-gold);
+
+  --focus-ring: color-mix(in srgb, var(--rs-red) 40%, transparent);
+}

@@ -1,0 +1,107 @@
+/* ============================================================
+   Respekt — Webfonts
+   Adelle Sans  → UI, headlines, navigation, buttons (sans-serif)
+   Adelle       → article body, perex, long-form reading (serif)
+   ============================================================ */
+
+/* ---------- Adelle Sans (sans-serif) ---------- */
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-SemiboldItalic.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Extrabold.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle Sans";
+  src: url("../assets/fonts/AdelleSans-Heavy.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- Adelle (serif) ---------- */
+@font-face {
+  font-family: "Adelle";
+  src: url("../assets/fonts/Adelle-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle";
+  src: url("../assets/fonts/Adelle-RegularItalic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle";
+  src: url("../assets/fonts/Adelle-Semibold.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle";
+  src: url("../assets/fonts/Adelle-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Adelle";
+  src: url("../assets/fonts/Adelle-BoldItalic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}

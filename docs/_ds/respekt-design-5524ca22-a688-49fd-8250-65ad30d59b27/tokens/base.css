@@ -1,0 +1,70 @@
+/* ============================================================
+   Respekt — base element styles & small helpers.
+   Kept light: just sane defaults so specimens & kits inherit the
+   brand without every component re-declaring fonts/colors.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-ui);
+  line-height: var(--lh-ui);
+  color: var(--text-strong);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Headlines default to Adelle Sans bold; reading text to Adelle serif. */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: var(--fw-bold);
+  color: var(--text-strong);
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--text-link);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+img { display: block; max-width: 100%; }
+
+::selection { background: color-mix(in srgb, var(--rs-red) 22%, transparent); }
+
+/* ---------- Reusable text classes ---------- */
+.rs-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.rs-meta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-meta);
+  color: var(--text-muted);
+}
+.rs-serif { font-family: var(--font-serif); }
+
+/* ---------- Category accent dot ("bodka") ---------- */
+.rs-bodka {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+  vertical-align: middle;
+}
+
+/* ---------- Focus ---------- */
+:where(button, a, input, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--rs-red);
+  outline-offset: 2px;
+}
