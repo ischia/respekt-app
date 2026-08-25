@@ -2155,20 +2155,21 @@ class Component extends DCLogic {
     }));
 
     const notes = [
+      // Prezentované položky pro vývojáře — zbytek je záměrně skrytý (viz zakomentované položky níže), zůstává v kódu pro pozdější použití.
       { badge: "Nové", bb: "var(--rs-red)", title: "Výzva k hodnocení aplikace", sub: "Po 2. pozitivním signálu (uložení, fronta, stažení) · kladné → store, výhrady → formulář do CMS s metadaty", screen: "home", rate: true },
       { badge: "Nové", bb: "var(--rs-red)", title: "Vyhledávání v aplikaci", sub: "Nejžádanější funkce (12 % předplatitelů) vč. archivu od 1990", screen: "search" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Odlišení přečteného a řazení", sub: "Nové nahoře s tečkou, přečtené ztlumené — 2 varianty (Tweaks)", screen: "home" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Souhrn „Ve zkratce“", sub: "Kratší verze článků · churn-lift 1,8×", screen: "article" },
+      { badge: "Nové", bb: "var(--rs-red)", title: "Odlišení přečteného a řazení", sub: "Roh s fajfkou v pravém dolním rohu.", screen: "home" },
       { badge: "Nové", bb: "var(--rs-red)", title: "Audio: rozcestník + přehrávač jako vrstva", sub: "Série, audiočlánky, stažené; player se minimalizuje, fronta uvnitř", screen: "audio" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Archiv a speciály", sub: "Starší vydání od 1990 podle ročníků", screen: "issue" },
       { badge: "Nové", bb: "var(--rs-red)", title: "Nastavení a tmavý režim", sub: "Účet, vzhled v šedých tónech, velikost písma", screen: "settings" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Paywall v článku", sub: "Ukázka, předplatné, přihlášení (Tweaks)", screen: "article" },
-      { badge: "Nové", bb: "var(--rs-red)", title: "Lišta akcí v článku", sub: "Zpět, domů, sdílet, odemknout, uložit · poslech je teď vstup nahoře v článku", screen: "article" },
-      { badge: "Fix", bb: "var(--rs-ink)", title: "Chybové stavy místo pádů", sub: "Offline banner s retry (zapněte v Tweaks)", screen: "home" },
-      { badge: "Fix", bb: "var(--rs-ink)", title: "Šetrnější notifikace", sub: "Témata, autoři, frekvence · žádné opakované dialogy", screen: "notif" },
-      { badge: "Fix", bb: "var(--rs-ink)", title: "Deeplinky a kopírování", sub: "Odkaz z článku se otevře v aplikaci, text lze označit", screen: "article" },
-      { badge: "Fix", bb: "var(--rs-ink)", title: "Vydání: PDF a offline bez pádů", sub: "Stažení s průběhem, příznak tištěného vydání", screen: "issue" },
-      { badge: "Fix", bb: "var(--rs-ink)", title: "Bez self-promo bannerů", sub: "Předplatitelé nevidí reklamu — čistý feed", screen: "home" },
+      // { badge: "Nové", bb: "var(--rs-red)", title: "Souhrn „Ve zkratce“", sub: "Kratší verze článků · churn-lift 1,8×", screen: "article" },
+      // { badge: "Nové", bb: "var(--rs-red)", title: "Archiv a speciály", sub: "Starší vydání od 1990 podle ročníků", screen: "issue" },
+      // { badge: "Nové", bb: "var(--rs-red)", title: "Paywall v článku", sub: "Ukázka, předplatné, přihlášení (Tweaks)", screen: "article" },
+      // { badge: "Nové", bb: "var(--rs-red)", title: "Lišta akcí v článku", sub: "Zpět, domů, sdílet, odemknout, uložit · poslech je teď vstup nahoře v článku", screen: "article" },
+      // { badge: "Fix", bb: "var(--rs-ink)", title: "Chybové stavy místo pádů", sub: "Offline banner s retry (zapněte v Tweaks)", screen: "home" },
+      // { badge: "Fix", bb: "var(--rs-ink)", title: "Šetrnější notifikace", sub: "Témata, autoři, frekvence · žádné opakované dialogy", screen: "notif" },
+      // { badge: "Fix", bb: "var(--rs-ink)", title: "Deeplinky a kopírování", sub: "Odkaz z článku se otevře v aplikaci, text lze označit", screen: "article" },
+      // { badge: "Fix", bb: "var(--rs-ink)", title: "Vydání: PDF a offline bez pádů", sub: "Stažení s průběhem, příznak tištěného vydání", screen: "issue" },
+      // { badge: "Fix", bb: "var(--rs-ink)", title: "Bez self-promo bannerů", sub: "Předplatitelé nevidí reklamu — čistý feed", screen: "home" },
     ].map((n) => ({ ...n, badgeBg: n.bb, bg: n.rate ? (s.rateOpen ? "var(--rs-wash-amber)" : "var(--rs-surface)") : s.screen === n.screen ? "var(--rs-wash-amber)" : "var(--rs-surface)", go: n.rate ? () => { pushNav("home"); openRate(); } : go(n.screen) }));
 
     // hodnocení
