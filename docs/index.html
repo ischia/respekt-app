@@ -48,11 +48,13 @@
                 </button>
               </div>
             </div>
+            <!--
             <div style="display: flex; gap: 22px; padding: 13px 20px 0; overflow-x: auto; -ms-overflow-style: none; scrollbar-width: none; background: var(--rs-surface); border-bottom: 1px solid var(--rs-line); margin-bottom: 14px; font-family: var(--font-sans); font-weight: 700; font-size: 14.5px;">
               <sc-for list="{{ homeRail }}" as="t" hint-placeholder-count="4">
                 <button onClick="{{ t.pick }}" style="flex: none; border: none; background: none; cursor: pointer; white-space: nowrap; padding: 0 0 12px; color: {{ t.color }}; border-bottom: 2px solid {{ t.underline }};">{{ t.label }}</button>
               </sc-for>
             </div>
+            -->
           </sc-if>
           <sc-if value="{{ classicHeader }}" hint-placeholder-val="{{ false }}">
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px 8px;">
@@ -1729,13 +1731,13 @@ class Component extends DCLogic {
 
   TRACKS = [
     { id: 1, title: "Jak se Česko připravuje na stoletou vodu? Pomáhají i vězni", meta: "Komentáře · 18 min ", type: "Audiočlánek" },
-    { id: 2, title: "Republikánům dává volební systém výhodu", meta: "Americká krása · 38 min", type: "Podcast" },
+    { id: 2, title: "Republikánům dává volební systém výhodu", meta: "Zeitgeist · 38 min", type: "Podcast" },
     { id: 3, title: "Evropa hledá plán B", meta: "Komentáře · 18 min ", type: "Audiočlánek" },
     { id: 4, title: "Výtah Respektu: co číst tento týden", meta: "Výtah Respektu · 21 min", type: "Podcast" },
   ];
 
   SERIES = [
-    { id: "ak", title: "Americká krása", meta: "89 dílů · 2× týdně", img: "assets/img/podcast-cover.png" },
+    { id: "ak", title: "Zeitgeist", meta: "89 dílů · 2× týdně", img: "assets/img/podcast-cover.png" },
     { id: "vy", title: "Výtah Respektu", meta: "212 dílů · každý pátek", img: "assets/img/article-4.png" },
     { id: "pd", title: "Podcast Respektu", meta: "146 dílů · rozhovory", img: "assets/img/article-2.png" },
   ];
