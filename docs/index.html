@@ -146,7 +146,7 @@
             <sc-if value="{{ c.isArticle }}" hint-placeholder-val="{{ true }}">
               <div style="background: {{ c.bg }}; border-radius: 6px; overflow: hidden; position: relative; transition: background .2s ease-out;">
                 <div style="position: relative;">
-                  <img src="./unnamed-mt7pcyje-885e.jpg" alt="" style="width: 100%; height: 220px; object-fit: cover; display: block;">
+                  <img src="{{ c.img }}" alt="" style="width: 100%; height: 220px; object-fit: cover; display: block;">
                   <div style="position: absolute; right: 8px; bottom: 8px; display: flex; gap: 6px;">
                     <sc-if value="{{ c.audio }}" hint-placeholder-val="{{ false }}">
                       <button onPointerDown="{{ c.audioDown }}" onPointerUp="{{ c.audioUp }}" onPointerCancel="{{ c.audioUp }}" aria-label="Možnosti poslechu — podržením přehrajete" style="width: 52px; height: 52px; border-radius: 999px; border: none; background: rgba(24,29,39,.82); color: #fff; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">
